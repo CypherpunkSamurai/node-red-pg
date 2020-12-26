@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "feedparser": "^2.2.10",
+    "nano": "^9.0.1",
+    "node-red": "^1.2.6",
+    "node-red-contrib-storagemodule-postgres": "^1.0.1",
+    "pg": "^8.5.1",
+    "redis": "^3.0.2",
+    "when": "^3.7.8"
+  }
+}
