@@ -16,6 +16,11 @@ RUN set -ex && \
         python3 python3-pip \
         ffmpeg
 
+COPY extras.sh /tmp/ 
+
+RUN chmod 755 /tmp/extras.sh && \
+./tmp/extras.sh && rm /tmp/extras.sh
+
 # Create work dir
 RUN mkdir -p /home/node/app/node_modules && \
 chown -R node:node /home/node/app
