@@ -1,20 +1,9 @@
-ARG ARCH=amd64
-ARG NODE_VERSION=12
-ARG OS=buster-slim
+FROM node:10-buster
 
-#### Stage BASE ########################################################################################################
-FROM ${ARCH}/node:${NODE_VERSION}-${OS} AS base
-
-# Create source folder
-RUN mkdir -p /home/node-red
-WORKDIR /home/node-red/
-
-# Copy scripts
-COPY . /home/node-red/
 
 # Install tools
 RUN set -ex && \
-    apt-get update && apt-get install -y \
+    apt-get update && apt-get install -yq \
         bash \
         tzdata \
         curl \
@@ -27,8 +16,24 @@ RUN set -ex && \
         python3 python3-pip \
         ffmpeg
 
-# Set work directory
-WORKDIR /home/node-red/
+# Create work dir
+RUN mkdir -p /home/node/app/node_modules && \
+chown -R node:node /home/node/app
+
+# Change to work dir
+WORKDIR /home/node/app
+
+# Cache Npm into Docker Cache
+COPY package*.json ./
+
+# Change user
+USER node
+
+# Run Npm
+RUN npm install
+
+# Copy Source
+COPY --chown=node:node . .
 
 # Chmod Scripts
 RUN chmod 755 *.sh
@@ -36,6 +41,11 @@ RUN chmod 755 *.sh
 # Install Extra Node-Red nodes
 RUN ./setup.sh
 
-EXPOSE 8080
+# Set PATH
+RUN export PATH=$(npm bin):$PATH
 
-CMD ["start.sh"]
+# Port Expose 5000
+EXPOSE 5000
+
+
+CMD ["npm","start"]

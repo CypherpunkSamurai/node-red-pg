@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Node-RED in Heroku</title>
+	<title>Node-RED self-hosted</title>
 
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
@@ -18,7 +18,7 @@
 
 <div class="header">
     <div class="header-content">
-        <a href="/"><img class="logo" src="images/node-red.png" /> Node-RED in Heroku</a>
+        <a href="/"><img class="logo" src="images/node-red.png" /> Node-RED self-hosted</a>
     </div>
 </div>
 <!-- Grid 1 -->
@@ -26,7 +26,7 @@
     <div class="grid">
         <div class="col-1-1">
             <div class="content">
-                <h1>Node-RED in Heroku</h1>
+                <h1>Node-RED self-hosted</h1>
                 <h2>A visual tool for wiring the Internet of Things</h2>
                 <img src="images/node-red-title-flow.png" />
             </div>
@@ -40,13 +40,16 @@
         <div class="col-1-2">
             <div class="content blurb">
             <p>Node-RED provides a browser-based editor that makes it easy to wire together flows that can be deployed to the runtime in a single-click.</p>
-            <p>The version running here has been customised for the Heroku.</p>
+            <p>The version running here has been customised for postgre by <a href="https://github.com/CypherpunkSamurai">CypherpunkSamurai</a>.</p>
             <p>More information about Node-RED, including documentation, can be found at <a href="http://nodered.org">nodered.org</a>.</p>
+            <p>
+            <p>Feel free to contribute me. For any help/bug create a issue on <a href="https://github.com/CypherpunkSamurai">Github</a></p>
             </div>
         </div>
         <div class="col-1-2">
             <div class="content blurb">
                 <p style="text-align: center"><a style="width:350px;" class="button" href="red/">Go to your Node-RED flow editor</a></p>
+                <p style="text-align: center"><a style="width:350px;" class="button" href="ui/">Go to your Node-RED Dashboard</a></p>
                 <p class="insecure hide" style="text-align: center"><a href="#password-protecting">Learn how to password-protect your instance</a></p>
                 <p style="text-align: center"><a href="#custom">Learn how to customise Node-RED</a></p>
             </div>
@@ -86,7 +89,7 @@
 
                 <h4>Upgrading the version of Node-RED</h4>
                 <ol><li>This boilerplate is configured to grab the latest stable release of Node-RED whenever the
-                    application is pushed into Heroku.</li>
+                    application is pushed.</li>
                 </ol>
 
                 <h4>Changing the static web content</h4>

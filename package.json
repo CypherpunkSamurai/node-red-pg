@@ -1,11 +1,27 @@
 {
+  "name": "node-red-pg",
+  "version": "1.0.0",
+  "description": "A Node-Red server that uses postgre",
+  "main": "node-red",
+  "scripts": {
+    "start": "node node_modules/node-red/red.js --settings settings.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CypherpunkSamurai/node-red-pg.git"
+  },
+  "author": "CypherpunkSamurai",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/CypherpunkSamurai/node-red-pg/issues"
+  },
+  "homepage": "https://github.com/CypherpunkSamurai/node-red-pg#readme",
   "dependencies": {
     "feedparser": "^2.2.10",
     "nano": "^9.0.1",
     "node-red": "^1.2.6",
     "node-red-contrib-storagemodule-postgres": "^1.0.1",
     "pg": "^8.5.1",
-    "redis": "^3.0.2",
     "when": "^3.7.8"
   }
 }

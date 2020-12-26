@@ -1,1 +1,0 @@
-node-red --settings ./settings.js
